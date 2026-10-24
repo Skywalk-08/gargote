@@ -109,7 +109,7 @@ INSERT INTO categorie (libelle) VALUES ('Goûter');
 
 ## Validation du niveau 0
 
-- [ ] L’application tourne (API + interface).
-- [ ] `reponses-niveau-0.md` répond aux 11 questions et contient le tableau 0.4 complet.
-- [ ] Le nom de la gargote est modifié ; *Goûter* existe en base.
-- [ ] Un commit `niveau 0 : prise en main`.
+- [X] L’application tourne (API + interface).
+- [X] `reponses-niveau-0.md` répond aux 11 questions et contient le tableau 0.4 complet.
+- [X] Le nom de la gargote est modifié ; *Goûter* existe en base.
+- [X] Un commit `niveau 0 : prise en main`.
