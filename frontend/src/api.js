@@ -38,8 +38,7 @@ export const api = {
   },
 
   plats: {
-    lister: (idCategorie) =>
-      requete('GET', idCategorie ? `/plats?categorie=${idCategorie}` : '/plats'),
+    lister: (idCategorie) => requete('GET', idCategorie ? `/plats?categorie=${idCategorie}` : '/plats'),
     creer: (plat) => requete('POST', '/plats', plat),
     modifier: (id, plat) => requete('PUT', `/plats/${id}`, plat),
     supprimer: (id) => requete('DELETE', `/plats/${id}`),
@@ -49,5 +48,11 @@ export const api = {
     lister: () => requete('GET', '/commandes'),
     detail: (id) => requete('GET', `/commandes/${id}`),
     creer: (commande) => requete('POST', '/commandes', commande),
+  },
+
+  platDuJour: {
+    lire: () => requete('GET', '/plat-du-jour'),
+    definir: idPlat => requete('PUT', '/plat-du-jour', { id_plat: idPlat }),
+    historique: () => requete('GET', '/plat-du-jour/historique'),
   },
 }

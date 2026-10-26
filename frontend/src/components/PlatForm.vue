@@ -8,7 +8,7 @@ const props = defineProps({
 })
 const emit = defineEmits(['enregistre', 'annule'])
 
-const formulaireVide = () => ({ nom: '', prix: '', id_categorie: '' })
+const formulaireVide = () => ({ nom: '', prix: '', id_categorie: '' , description: '', disponible: true })
 
 const form = ref(formulaireVide())
 const erreurs = ref({})
@@ -22,7 +22,7 @@ watch(
   () => props.plat,
   (plat) => {
     form.value = plat
-      ? { nom: plat.nom, prix: plat.prix, id_categorie: plat.id_categorie }
+      ? { nom: plat.nom, prix: plat.prix, id_categorie: plat.id_categorie, description: plat.description, disponible: plat.disponible }
       : formulaireVide()
     erreurs.value = {}
     message.value = ''
@@ -78,6 +78,19 @@ async function enregistrer() {
         <option v-for="c in categories" :key="c.id" :value="c.id">{{ c.libelle }}</option>
       </select>
       <small v-if="erreurs.id_categorie" class="erreur">{{ erreurs.id_categorie }}</small>
+    </label>
+
+    <label class="champ">
+      <span>Description</span>
+      <textarea v-model.trim="form.description" rows="3" maxlength="255" placeholder="Décrivez le plat..."></textarea>
+      <small v-if="erreurs.description" class="erreur">
+        {{ erreurs.description }}
+      </small>
+    </label>
+    
+    <label class="champ">
+      <span><input v-model="form.disponible" type="checkbox" />Disponible</span>
+      <small v-if="erreurs.disponible" class="erreur">{{ erreurs.disponible }}</small>
     </label>
 
     <div class="boutons">

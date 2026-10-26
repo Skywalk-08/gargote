@@ -26,7 +26,9 @@
   --encre: #1e2420;          /* texte principal */
   --gris: #6b736d;           /* texte secondaire */
   --trait: #d3d8d0;          /* bordures */
-
+  --succes: #dcefe2;
+  --erreur: #f6ddd7;
+  --bois: #8a6a43;           /* cadre en bois */
   --police-texte: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --police-titre: Georgia, 'Times New Roman', serif;
 
@@ -104,7 +106,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, tr:focus-visibl
 /* 5. L’ardoise ------------------------------------------------ */
 .ardoise {
   padding: 1.5rem 1.75rem;
-  border: 10px solid #8a6a43;          /* le cadre en bois */
+  border: 10px solid var(--bois);          /* le cadre en bois */
   border-radius: 4px;
   background: var(--ardoise);
   color: var(--craie);
@@ -185,7 +187,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, tr:focus-visibl
   opacity: 0.7;
 }
 .lien:hover { opacity: 1; }
-.lien-danger { color: #f0a493; }
+.lien-danger { color: var(--piment); }
 
 .erreur { color: var(--piment); font-size: 0.85rem; }
 .vide { color: var(--gris); font-style: italic; }
@@ -226,14 +228,14 @@ button:focus-visible, input:focus-visible, select:focus-visible, tr:focus-visibl
 
 .tableau-cliquable tbody tr { cursor: pointer; }
 .tableau-cliquable tbody tr:hover { background: var(--fond); }
-.tableau-cliquable tr.selectionnee { background: #fbefd2; }
+.tableau-cliquable tr.selectionnee { background:var(--fond); }
 
 .ticket-info { margin-top: -0.5rem; color: var(--gris); }
 
 /* 9. Messages ------------------------------------------------- */
 .alerte { margin: 0 0 var(--espace); padding: 0.75rem 1rem; border-radius: var(--rayon); }
-.alerte-succes { background: #dcefe2; color: var(--feuille); }
-.alerte-erreur { background: #f6ddd7; color: var(--piment); }
+.alerte-succes { background: var(--succes); color: var(--feuille); }
+.alerte-erreur { background: var(--erreur); color: var(--piment); }
 
 /* 10. Petits écrans ------------------------------------------ */
 @media (max-width: 800px) {
@@ -241,3 +243,67 @@ button:focus-visible, input:focus-visible, select:focus-visible, tr:focus-visibl
   .entete, .contenu { padding-left: 1rem; padding-right: 1rem; }
   .onglets { overflow-x: auto; }
 }
+
+/* 11. PLat du jour ------------------------------------------ */
+/* =========================================================
+   10. PLAT DU JOUR ET DISPONIBILITÉ
+   ========================================================= */
+
+/* Badge général */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Badge "épuisé" */
+.badge-epuise {
+  color: var(--gris);
+  background-color: var(--couleur-secondaire);
+}
+
+/* Plat épuisé */
+.plat-indisponible {
+  color: var(--piment);
+  opacity: 0.5;
+}
+
+.plat-nom-barree {
+  text-decoration: line-through;
+}
+
+/* Description du plat */
+.plat-description {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.plat-du-jour {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 2px solid var(--couleur-principale);
+  border-radius: 12px;
+  background-color: var(--couleur-fond);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.plat-du-jour h2 {
+  margin-top: 0;
+  color: var(--couleur-principale);
+}
+
+.plat-du-jour .plat-nom {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.plat-du-jour .plat-prix {
+  font-weight: 600;
+  color: var(--couleur-secondaire);
+}
+

@@ -241,9 +241,9 @@ Le CSS fourni contient encore **des couleurs écrites directement** en dehors de
 
 ## Validation du niveau 1
 
-- [ ] `reset.sh`, puis `niveau1_schema.sql`, puis `niveau1_donnees.sql` s’exécutent sans erreur.
-- [ ] Les 8 requêtes du tableau 1.7 donnent le code attendu. Aucune erreur 500.
-- [ ] La carte affiche descriptions, plats épuisés et plat du jour ; on peut basculer un plat en épuisé et choisir le plat du jour depuis l’interface.
-- [ ] `PlatDuJour.vue` est utilisé dans deux écrans, avec deux comportements différents.
-- [ ] Plus aucune couleur en dur hors de `:root` ; deux captures d’écran montrent deux thèmes.
-- [ ] Réponses aux questions 1 à 7 dans `tp/reponses-niveau-1.md`.
+- [X] `reset.sh`, puis `niveau1_schema.sql`, puis `niveau1_donnees.sql` s’exécutent sans erreur.
+- [X] Les 8 requêtes du tableau 1.7 donnent le code attendu. Aucune erreur 500.
+- [X] La carte affiche descriptions, plats épuisés et plat du jour ; on peut basculer un plat en épuisé et choisir le plat du jour depuis l’interface.
+- [X] `PlatDuJour.vue` est utilisé dans deux écrans, avec deux comportements différents.
+- [X] Plus aucune couleur en dur hors de `:root` ; deux captures d’écran montrent deux thèmes.
+- [X] Réponses aux questions 1 à 7 dans `tp/reponses-niveau-1.md`.

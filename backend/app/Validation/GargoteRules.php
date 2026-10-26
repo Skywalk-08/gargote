@@ -30,4 +30,22 @@ class GargoteRules
 
         return false;
     }
+
+
+    public function est_booleen($valeur, ?string &$erreur = null): bool
+    {
+        if (
+            is_bool($valeur)
+            || $valeur === 0
+            || $valeur === 1
+            || $valeur === '0'
+            || $valeur === '1'
+        ) {
+            return true;
+        }
+
+        $erreur = 'La disponibilité doit être un booléen (true ou false).';
+
+        return false;
+    }
 }
